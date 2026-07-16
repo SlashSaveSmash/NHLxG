@@ -1,0 +1,8 @@
+two general things that are works in progress:
+camelCase-ifying the whole project
+figuring out the filepaths with NHLxG/ or whatever
+
+notable players:
+connor mcdavid 8478402
+nikita 8476453
+macklin 8484801
