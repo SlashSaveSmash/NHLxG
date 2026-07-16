@@ -6,3 +6,17 @@ notable players:
 connor mcdavid 8478402
 nikita 8476453
 macklin 8484801
+
+ev model - 5v5 4v4 etc
+pp model - 5v4 4v3 etc
+sh model - 4v5 3v4 etc
+2pp and 2sh are 5v3 and 3v5 situations respectively - each only applies if both nets are full
+pp en model - 6v5 etc; shooting on a goalie but with your own net empty
+evsh en model - when the shooting team has the same amount or fewer skaters than the opposing team
+that model had 105 shots - i think its best that i consolidate models somehow
+i think i have all situations covered as long as i make sure that the model returns 1 when the opposing teams net is empty
+
+i might want to revisit these very small dataset models (double man-adv with both nets full etc)
+    because they might not significantly increase performance in exchange for much noiser results
+
+after updating xgfromshot, we have all situations covered with the xg for empty net shots being 1
