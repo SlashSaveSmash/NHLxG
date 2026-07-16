@@ -7,6 +7,7 @@ from pandas import DataFrame
 from joblib import dump
 from modelCriteria import modelCriteria
 from collection.prepareShotsFromGameId import prepareShotsFromGameId
+from pathlib import Path
 
 def trainModelFromAPI():
     scaler = StandardScaler().set_output(transform='pandas')
@@ -42,5 +43,5 @@ def trainModelFromAPI():
     xTrainScaled = scaler.fit_transform(xTrain)
 
     model.fit(xTrainScaled, yTrain)
-    dump(model, 'model.joblib')
-    dump(scaler, 'scaler.joblib')
+    dump(model, Path(__file__).parent.parent/'models'/'model.joblib')
+    dump(scaler, Path(__file__).parent.parent/'scalers'/'scaler.joblib')
