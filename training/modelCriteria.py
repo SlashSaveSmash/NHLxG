@@ -12,7 +12,6 @@ def modelCriteria(shot:dict):
         'awayTeam': 1 if shot['details']['eventOwnerTeamId'] == shot['awayTeamId'] else 0,
         'distance': (((89-realX(shot)) + shot['details']['yCoord']**2)**0.5).real,
         'distanceSquared': (89-realX(shot)) + shot['details']['yCoord']**2,
-        'emptyNet': 1 if manAdv(shot)['opp_empty_net'] else 0,
         'homeTeam': 1 if shot['details']['eventOwnerTeamId'] == shot['homeTeamId'] else 0,
         'lastEventBlockedShot': 1 if shot['previousEvent'] == 'blocked-shot' else 0,
         'lastEventDelayedPenalty': 1 if shot['previousEvent'] == 'delayed-penalty' else 0,
@@ -29,7 +28,6 @@ def modelCriteria(shot:dict):
         'lastEventShotOnGoal': 1 if shot['previousEvent'] == 'shot-on-goal' else 0,
         'lastEventStoppage': 1 if shot['previousEvent'] == 'stoppage' else 0,
         'lastEventTakeaway': 1 if shot['previousEvent'] == 'takeaway' else 0,
-        'oppSkaters': manAdv(shot)['opp_skaters'],
         'periodTypeOT': 1 if shot['periodDescriptor']['periodType'] == 'OT' else 0,
         'periodTypeREG': 1 if shot['periodDescriptor']['periodType'] == 'REG' else 0,
         'rebound': 1 if 0 <= shot['timeSinceLastShot'] <= 3 else 0,
@@ -44,7 +42,5 @@ def modelCriteria(shot:dict):
         'shotTypeTipIn': 1 if shot['details']['shotType'] == 'tip-in' else 0,
         'shotTypeWrapAround': 1 if shot['details']['shotType'] == 'wrap-around' else 0,
         'shotTypeWrist': 1 if shot['details']['shotType'] == 'wrist' else 0,
-        'skaterDifference': manAdv(shot)['team_skaters'] - manAdv(shot)['opp_skaters'],
-        'teamSkaters': manAdv(shot)['team_skaters'],
         'timeSinceLastShot': shot['timeSinceLastShot']
     }
