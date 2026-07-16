@@ -6,6 +6,7 @@ from joblib import dump
 from ast import literal_eval
 from validShotFiles import validShotFiles
 from modelCriteria import modelCriteria
+from pathlib import Path
 
 def trainModelFromFiles():
     scaler = StandardScaler().set_output(transform='pandas')
@@ -37,5 +38,5 @@ def trainModelFromFiles():
     xTrainScaled = scaler.fit_transform(xTrain)
 
     model.fit(xTrainScaled, yTrain)
-    dump(model, 'model.joblib')
-    dump(scaler, 'scaler.joblib')
+    dump(model, Path(__file__).parent.parent/'models'/'model.joblib')
+    dump(scaler, Path(__file__).parent.parent/'scalers'/'scaler.joblib')
