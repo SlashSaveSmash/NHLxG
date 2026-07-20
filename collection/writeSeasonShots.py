@@ -1,5 +1,5 @@
-from allIdsFromRegSeason import allIdsFromRegSeason
-from prepareShotsFromGameId import prepareShotsFromGameId
+from collection.allIdsFromRegSeason import allIdsFromRegSeason
+from collection.prepareShotsFromGameId import prepareShotsFromGameId
 from pathlib import Path
 
 def writeSeasonShots(season:int):
