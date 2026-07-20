@@ -3,7 +3,7 @@ from time import sleep
 from custom_attributes.realX import realX
 from custom_attributes.secondsLeftInPeriod import secondsLeftInPeriod
 from client import client
-from nhlpy.http_client import ServerErrorException
+from nhlpy.http_client import ServerErrorException, ResourceNotFoundException
 
 def prepareShotsFromGameId(gameId:int):
     connected = False
