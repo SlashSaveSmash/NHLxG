@@ -14,6 +14,8 @@ def prepareShotsFromGameId(gameId:int):
         except (ReadTimeout, ConnectError, ConnectTimeout, ServerErrorException):
             print('Connection issue, waiting 5 seconds')
             sleep(5)
+        except ResourceNotFoundException:
+            pass
     lastShotTime = -1
     allPlays = allInformation['plays']
     for i in range(len(allPlays)):
